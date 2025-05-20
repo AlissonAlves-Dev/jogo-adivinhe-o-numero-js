@@ -1,3 +1,4 @@
+let maxNumber = 20;
 let secretNumber = randomNumber();
 let shots = 1;
 
@@ -8,7 +9,8 @@ function showText (tag, text) {
 
 function showTextOnScreen() {
     showText(".title", "Joguinho do número secreto.");
-    showText(".texto__paragrafo", "Escolha um número entre 1 e 100.")
+    let messageMaxNumber = `Escolha um número entre 1 e ${maxNumber}.`;
+    showText(".texto__paragrafo", messageMaxNumber);
 }
 
 showTextOnScreen();
@@ -20,9 +22,9 @@ function checkShot() {
         showText(".title", "Você Acertou!");
 
         let wordShots = shots > 1 ? "tentativas" : "Tentativa";
-        let mesageShots = `Você descobriu o número secreto com um total de ${shots} ${wordShots}!`
+        let messageShots = `Você descobriu o número secreto com um total de ${shots} ${wordShots}!`
 
-        showText(".texto__paragrafo", mesageShots);
+        showText(".texto__paragrafo", messageShots);
         document.querySelector("#reiniciar").removeAttribute("disabled");
     } else if (secretNumber < shot){
         showText(".title", "Você Errou!!!");
@@ -37,7 +39,7 @@ function checkShot() {
 }
 
 function randomNumber() {
-    return parseInt(Math.random() * 100 + 1);
+    return parseInt(Math.random() * maxNumber) +1;
 }
 
 function clearInput() {
