@@ -26,11 +26,11 @@ function checkShot() {
         document.querySelector("#reiniciar").removeAttribute("disabled");
     } else if (secretNumber < shot){
         showText(".title", "Você Errou!!!");
-        showText(".texto__paragrafo", "O número secreto é menor do escolhido");
+        showText(".texto__paragrafo", "O número secreto é menor do que o escolhido");
         clearInput();
     } else {
         showText(".title", "Você Errou!!!");
-        showText(".texto__paragrafo", "O número secreto é maior do escolhido");
+        showText(".texto__paragrafo", "O número secreto é maior do que o escolhido");
         clearInput();
     }
     shots++;
