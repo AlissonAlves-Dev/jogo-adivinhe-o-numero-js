@@ -43,7 +43,7 @@ function randomNumber() {
 }
 
 function clearInput() {
-    shot = document.querySelector(".container__input");
+    let shot = document.querySelector(".container__input");
     shot.value = '';
 }
 
